@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather Forecast</title>
+  </head>
+  <body>
+    <h1>Weather Forecast for Next 7 Days</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Temperature (C)</th>
+          <th>Temperature (F)</th>
+          <th>Summary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Use JavaScript to populate the table rows -->
+      </tbody>
+    </table>
+
+    <!-- Include JavaScript to fetch the weather forecast data and populate the table rows -->
+    <script>
+      // Fetch the weather forecast data from the API
+      fetch('http://localhost:5000/weatherforecast')
+        .then(response => response.json())
+        .then(data => {
+          // Iterate over the array of weather forecast objects
+          data.forEach(day => {
+            // Create a new row in the table for this day's weather forecast
+            const row = document.createElement('tr');
+
+            // Add the date, temperature (C), temperature (F), and summary to the row
+            const dateCell = document.createElement('td');
+            dateCell.textContent = new Date(day.date).toLocaleDateString();
+            row.appendChild(dateCell);
+
+            const tempCCell = document.createElement('td');
+            tempCCell.textContent = day.temperatureC;
+            row.appendChild(tempCCell);
+
+            const tempFCell = document.createElement('td');
+            tempFCell.textContent = day.temperatureF;
+            row.appendChild(tempFCell);
+
+            const summaryCell = document.createElement('td');
+            summaryCell.textContent = day.summary;
+            row.appendChild(summaryCell);
+
+            // Add the row to the table
+            document.querySelector('tbody').appendChild(row);
+          });
+        });
+    </script>
+  </body>
+</html>
