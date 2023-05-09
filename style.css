@@ -3,6 +3,13 @@ h1 {
     text-align: center;
     font-size: 36px;
     margin-top: 50px;
+
+    background: url(https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg?cs=srgb&dl=pexels-pixabay-209831.jpg&fm=jpg)
+        no-repeat;
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 /* Style the table */
