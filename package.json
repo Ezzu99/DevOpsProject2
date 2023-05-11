@@ -1,0 +1,23 @@
+{
+  "name": "devopsproject2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./tests/tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ezzu99/DevOpsProject2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ezzu99/DevOpsProject2/issues"
+  },
+  "homepage": "https://github.com/Ezzu99/DevOpsProject2#readme",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "selenium-webdriver": "^4.9.2"
+  }
+}
