@@ -4,7 +4,7 @@ var should = require("chai").should();
 const Test = async () => {
     let driver = await new Builder().forBrowser("chrome").build();
 
-    await driver.get("http://rgateproject-frontend-staging.azurewebsites.net/");
+    await driver.get("file://" + __dirname + "/../index.html");
 
     let pageTitle = await driver.getTitle();
 
